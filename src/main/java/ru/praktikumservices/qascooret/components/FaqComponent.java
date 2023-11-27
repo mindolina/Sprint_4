@@ -1,4 +1,4 @@
-package ru.yandex.practicum.page_object.components;
+package ru.praktikumservices.qascooret.components;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -7,27 +7,31 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class FaqComponent extends BaseComponent{
-    private By question = By.xpath(".//div[@id='accordion__heading-0']");
-    private By answer = By.xpath(".//div[@id='accordion__panel-0']/p");
+public class FaqComponent extends BaseComponent {
+    private final By question = By.xpath(".//div[contains(@id, 'accordion__heading')]");
 
-    public FaqComponent(WebElement root,WebDriver webDriver){
-        super(root,webDriver);
+    private final By answer = By.xpath(".//div[contains(@id, 'accordion__panel')]/p");
+
+    public FaqComponent(WebElement root, WebDriver webDriver) {
+        super(root, webDriver);
 
     }
 
 
-    public String getQuestion (){
+    public String getQuestion() {
         return root.findElement(question).getText();
     }
-    public String getAnswer(){
+
+    public String getAnswer() {
         return root.findElement(answer).getText();
     }
-    public void openFaq (){
-         WebDriverWait webDriverWait= new WebDriverWait(webDriver,10);
-         webDriverWait
+
+
+    public void openFaq() {
+        WebDriverWait webDriverWait = new WebDriverWait(webDriver, 10);
+        webDriverWait
                 .until(ExpectedConditions.presenceOfElementLocated(this.question));
-         WebElement faqElement = root.findElement(question);
+        WebElement faqElement = root.findElement(question);
         ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView();", faqElement);
         webDriverWait.until(ExpectedConditions.elementToBeClickable(faqElement));
         faqElement.click();
