@@ -1,4 +1,4 @@
-package ru.praktikumservices.qascooret;
+package ru.praktikumservices.pageobject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

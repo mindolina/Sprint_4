@@ -1,4 +1,4 @@
-package ru.praktikumservices.qascooret.components;
+package ru.praktikumservices.pageobject.components;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

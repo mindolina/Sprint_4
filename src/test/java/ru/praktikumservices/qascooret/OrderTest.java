@@ -9,6 +9,10 @@ import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import ru.praktikumservices.pageobject.DetaisRentsPage;
+import ru.praktikumservices.pageobject.HomePage;
+import ru.praktikumservices.pageobject.ModalAssentPage;
+import ru.praktikumservices.pageobject.WhoRentsPage;
 
 import java.util.concurrent.TimeUnit;
 

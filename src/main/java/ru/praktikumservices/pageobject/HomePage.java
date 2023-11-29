@@ -1,10 +1,10 @@
-package ru.praktikumservices.qascooret;
+package ru.praktikumservices.pageobject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import ru.praktikumservices.qascooret.components.FaqComponent;
+import ru.praktikumservices.pageobject.components.FaqComponent;
 
 public class HomePage extends BasePage {
     private final By faq = By.xpath(".//div[@class='accordion__item']");

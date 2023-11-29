@@ -4,7 +4,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import ru.praktikumservices.qascooret.components.FaqComponent;
+import ru.praktikumservices.pageobject.HomePage;
+import ru.praktikumservices.pageobject.components.FaqComponent;
 
 
 @RunWith(Parameterized.class)

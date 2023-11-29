@@ -1,4 +1,4 @@
-package ru.praktikumservices.qascooret;
+package ru.praktikumservices.pageobject;
 
 import org.hamcrest.MatcherAssert;
 import org.openqa.selenium.By;
