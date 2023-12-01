@@ -11,6 +11,8 @@ public class ModalAssentPage extends BasePage {
 
     private final By buttonViewOrder = By.xpath(".//button[contains(text(),'Посмотреть статус')]");
 
+    private final By textFinal = By.xpath("..//div[@class='Order_ModalHeader__3FDaJ']");
+
     public ModalAssentPage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -21,8 +23,9 @@ public class ModalAssentPage extends BasePage {
     }
 
     public String getTextOrder() {
-
         return webDriver.findElement(buttonViewOrder).getText();
     }
 
+
 }
+

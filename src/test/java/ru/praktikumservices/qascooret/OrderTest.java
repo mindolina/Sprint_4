@@ -44,15 +44,13 @@ public class OrderTest {
     public String userColorScooter;
     @Parameterized.Parameter(10)
     public String userComment;
-    @Parameterized.Parameter(11)
-    public String orderReady;
 
 
     @Parameterized.Parameters
     public static Object[][] testData() {
         return new Object[][]{
-                {"chrome", "заказать вверху страницы", "Гарри", "Поттер", "Чулан под лестницей", "Царицыно", "11111111111", "01.01.2024", "сутки", "чёрный жемчуг", "это правда или это у меня в голове?", "Посмотреть статус"},
-                {"firefox", "заказать внизу страницы", "Том", "Реддл", "приют", "Красные ворота", "22222222222", "31.12.1935", "семеро суток", "серая безысходность", "это моё прошлое, настоящее и будущее", "Посмотреть статус"}
+                {"chrome", "заказать вверху страницы", "Гарри", "Поттер", "Чулан под лестницей", "Царицыно", "11111111111", "01.01.2024", "сутки", "чёрный жемчуг", "это правда или это у меня в голове?"},
+                {"firefox", "заказать внизу страницы", "Том", "Реддл", "приют", "Красные ворота", "22222222222", "31.12.1935", "семеро суток", "серая безысходность", "это моё прошлое, настоящее и будущее"}
         };
     }
 
@@ -84,7 +82,9 @@ public class OrderTest {
 
         ModalAssentPage modalAssentPage = new ModalAssentPage(webDriver);
         modalAssentPage.clickButtonAssent();
-        Assert.assertEquals("На финальном экране должна быть кнопка : Посмотреть статус", orderReady, modalAssentPage.getTextOrder());
+        Assert.assertEquals("На финальном экране должна быть кнопка : Посмотреть статус", "Посмотреть статус", modalAssentPage.getTextOrder());
+
+
     }
 
     @After
