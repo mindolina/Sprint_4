@@ -2,6 +2,7 @@ package ru.praktikumservices.qascooret;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -50,8 +51,8 @@ public class OrderTest {
     @Parameterized.Parameters
     public static Object[][] testData() {
         return new Object[][]{
-                {"chrome", "заказать вверху страницы", "Гарри", "Поттер", "Чулан под лестницей", "Царицыно", "11111111111", "01.01.2024", "сутки", "чёрный жемчуг", "это правда или это у меня в голове?", "Заказ оформлен"},
-                {"firefox", "заказать внизу страницы", "Том", "Реддл", "приют", "Красные ворота", "22222222222", "31.12.1935", "семеро суток", "серая безысходность", "это моё прошлое, настоящее и будущее", "Заказ оформлен"}
+                {"chrome", "заказать вверху страницы", "Гарри", "Поттер", "Чулан под лестницей", "Царицыно", "11111111111", "01.01.2024", "сутки", "чёрный жемчуг", "это правда или это у меня в голове?", "Посмотреть статус"},
+                {"firefox", "заказать внизу страницы", "Том", "Реддл", "приют", "Красные ворота", "22222222222", "31.12.1935", "семеро суток", "серая безысходность", "это моё прошлое, настоящее и будущее", "Посмотреть статус"}
         };
     }
 
@@ -83,7 +84,7 @@ public class OrderTest {
 
         ModalAssentPage modalAssentPage = new ModalAssentPage(webDriver);
         modalAssentPage.clickButtonAssent();
-        modalAssentPage.waitTextOrder(orderReady);
+        Assert.assertEquals("На финальном экране должна быть кнопка : Посмотреть статус", orderReady, modalAssentPage.getTextOrder());
     }
 
     @After
